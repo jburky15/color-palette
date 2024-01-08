@@ -1,9 +1,33 @@
+import { useState } from "react"
 import Head from "next/head"
 import styles from '@/styles/Home.module.css'
+import DisplayImage from "@/components/DisplayImage"
+import ColorThief from "colorthief"
 
 const gallery = <i className="fas fa-images"></i>
 
 export default function Home() {
+  const [uploadedImage, setUploadedImage] = useState(null)
+  const [colorPalette, setColorPalette] = useState(null)
+
+  const uploadImage = (e) => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+
+    reader.onload = async (event) => {
+      const img = new Image()
+      img.onload = () => {
+        const colorThief = new ColorThief()
+        const colorPalette = colorThief.getPalette(img, 6)
+
+        console.log(colorPalette)
+      }
+      img.src = event.target.result
+    }
+
+    reader.readAsDataURL(file)
+  }
+
   return (
     <>
       <Head>
@@ -17,12 +41,12 @@ export default function Home() {
         <h1>Palette Generator</h1>
         <div className="input">
           <label htmlFor="file">{ gallery } Upload Image</label>
-          <input type="file" id="file" hidden />
+          <input type="file" id="file" hidden onChange={ uploadImage } />
         </div>
 
       </header>
-      <main className="{styles.main}">
-        
+      <main className={styles.main}>
+        <DisplayImage />
       </main>
     </>
   )
