@@ -20,7 +20,8 @@ export default function Home() {
         const colorThief = new ColorThief()
         const colorPalette = colorThief.getPalette(img, 6)
 
-        console.log(colorPalette)
+        setUploadedImage(event.target.result)
+        setColorPalette(colorPalette)
       }
       img.src = event.target.result
     }
@@ -46,7 +47,10 @@ export default function Home() {
 
       </header>
       <main className={styles.main}>
-        <DisplayImage />
+        <DisplayImage 
+          uploadedImage={uploadedImage}
+          colorPalette={colorPalette}
+        />
       </main>
     </>
   )
