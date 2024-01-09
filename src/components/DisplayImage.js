@@ -13,7 +13,8 @@ function DisplayImage({ uploadedImage, colorPalette }) {
           colorPalette && 
           <ul>
             { colorPalette.map((color, idx) => {
-              return  <h3 key={ idx }>RGB: { color }</h3>;
+              const rgb = `RGB: (${color[0]}, ${color[1]}, ${color[2]})`
+              return  <h3 key={ idx }>{ rgb }</h3>;
             })}
           </ul> 
         }
