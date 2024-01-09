@@ -2,6 +2,7 @@
 
 :root {
   --border: rgb(54, 54, 54);
+  --box-shadow: rgba(65, 65, 65, 0.5);
 }
 
 * {
@@ -27,14 +28,14 @@ header {
   min-height: 10vh;
   gap: 3rem;
   background: rgb(44, 44, 44);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px var(--box-shadow);
   border-bottom: 2px solid var(--border);
 }
 
 header h1 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 2rem;
-  background-image: linear-gradient(90deg, rgb(80, 35, 6) 0%, rgb(163, 77, 27) 50%, rgb(255, 102, 0) 100%);
+  background-image: linear-gradient(180deg, rgb(160, 152, 146) 25%, rgb(163, 77, 27) 50%, rgb(255, 102, 0) 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -54,4 +55,32 @@ header .input {
   border-radius: 0.5rem;
   border: 2px solid var(--border);
   cursor: pointer;
+}
+
+.input label i {
+  font-size: 1.5rem;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+  width: 50rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.image:hover {
+  box-shadow: 2px 4px 7px var(--box-shadow);
+}
+
+.image img {
+  width: calc(100% + 1rem);
+  height: calc(100% + .5rem);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
 }

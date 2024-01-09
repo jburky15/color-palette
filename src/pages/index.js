@@ -42,14 +42,14 @@ export default function Home() {
         <h1>Palette Generator</h1>
         <div className="input">
           <label htmlFor="file">{ gallery } Upload Image</label>
-          <input type="file" id="file" hidden onChange={ uploadImage } />
+          <input type="file" accept="image/*" id="file" hidden onChange={ uploadImage } />
         </div>
 
       </header>
-      <main className={styles.main}>
+      <main className={ styles.main }>
         <DisplayImage 
-          uploadedImage={uploadedImage}
-          colorPalette={colorPalette}
+          uploadedImage={ uploadedImage }
+          colorPalette={ colorPalette }
         />
       </main>
     </>

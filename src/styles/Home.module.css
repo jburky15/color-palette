@@ -5,3 +5,11 @@
   justify-content: center;
   padding: 1rem 4rem;
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
