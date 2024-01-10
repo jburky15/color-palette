@@ -1,8 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from "../styles/Home.module.css"
+import ListItem from './ListItem'
 
 function DisplayImage({ uploadedImage, colorPalette }) {
+  const toHex = (rgb) => {
+    let hexVal = Number(rgb).toString(16)
+    if (hexVal.length < 2) {
+      hexVal = "0" + hexVal;
+    }
+    return hexVal
+  }
+
   return (
     <div className={styles.content}>
         <div className='image'>
@@ -13,8 +22,9 @@ function DisplayImage({ uploadedImage, colorPalette }) {
           colorPalette && 
           <ul>
             { colorPalette.map((color, idx) => {
-              const rgb = `RGB: (${color[0]}, ${color[1]}, ${color[2]})`
-              return  <h3 key={ idx }>{ rgb }</h3>;
+              const rgb = `RGB: (${color.join(", ")})`
+              const hex = `HEX: #${ toHex(color[0]) }${ toHex(color[1]) }${ toHex(color[2]) }`
+              return <h3 key={ idx }>{ rgb } { hex }</h3>
             })}
           </ul> 
         }

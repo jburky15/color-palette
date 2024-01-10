@@ -1,8 +1,11 @@
 import React from 'react'
+import styles from "../styles/Home.module.css"
 
-function ListItem() {
+function ListItem({ rgb, hex }) {
   return (
-    <div>ListItem</div>
+    <li className=''>
+
+    </li>
   )
 }
 
