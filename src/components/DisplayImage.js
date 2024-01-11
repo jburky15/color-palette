@@ -22,7 +22,7 @@ function DisplayImage({ uploadedImage, colorPalette }) {
           <h2>Select an image in the top right</h2>
         )}
       </div>
-
+        <h4>Click on the hex or rgb value to copy their value to your clipboard</h4>
       {colorPalette && (
         <ul className={styles.colors}>
           {colorPalette.map((color, idx) => {
