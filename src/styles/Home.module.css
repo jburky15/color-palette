@@ -13,3 +13,51 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.colors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.colors li {
+  position: relative;
+  list-style-type: none;
+  width: 14rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.colors li:hover {
+  transform: translateY(-5px);
+}
+
+.hexSpan {
+  margin-bottom: 1.8rem;
+  border-top: 2px solid #ffffff2f;
+  padding-left: 3rem;
+}
+
+.rgbSpan {
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.colors li span {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  color: rgb(34, 26, 77);
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.colors li span i {
+  font-size: 1.25rem;
+}
